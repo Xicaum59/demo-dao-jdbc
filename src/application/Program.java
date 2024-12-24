@@ -18,6 +18,7 @@ public class Program {
 		Seller seller = sellerDao.findById(3);		
 		System.out.println(seller);
 		
+	
 		
 		System.out.println("\n===Test 2: seller findByDepartment ===");
 		Department department = new Department(2, null);
@@ -36,6 +37,15 @@ public class Program {
 		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New Id = " + newSeller.getId());
-	}
+	
+		System.out.println("\n====Test 5: seller update ====");
+		seller = sellerDao.findById(2);
+		seller.setName("Binho Cerqueira");
+		sellerDao.update(seller);
+		System.out.println("Update Completed!");
 
-}
+		}
+		
+}	
+
+
